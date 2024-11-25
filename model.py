@@ -1177,7 +1177,6 @@ class PLMR(nn.Module):
             classification_loss=classification_loss,
             sparsity_loss=total_dim_reduction_loss1,
             continuity_loss=total_dim_reduction_loss2,
-            layer_tokens_remained=layer_neat_mac,
         )
     def full_text_and_cls(
             self,
