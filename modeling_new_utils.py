@@ -36,4 +36,3 @@ class my_Output3(ModelOutput):
     classification_loss: Optional[torch.FloatTensor] = None
     sparsity_loss: Optional[torch.FloatTensor] = None
     continuity_loss: Optional[torch.FloatTensor] = None
-    layer_tokens_remained: Optional[Tuple[torch.FloatTensor]] = None

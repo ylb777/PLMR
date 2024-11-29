@@ -10,6 +10,6 @@ if __name__ == '__main__':
             --continuity_lambda 10 \
             --epochs 30 \
             --sparsity_lambda 10 \
-            --batch_size 64 \
+            --batch_size 4 \
             --sparsity_percentage 0.2 "
     os.system(cmd)

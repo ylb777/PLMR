@@ -68,7 +68,7 @@ class BeerDataCorrelated(Dataset):
             pos_examples = random.sample(pos_examples, min_examples)
             neg_examples = random.sample(neg_examples, min_examples)
             assert len(pos_examples) == len(neg_examples)
-            examples = pos_examples + neg_examples
+            examples = pos_examples[0:16] + neg_examples[0:16]
             print(f'After balancing: {len(pos_examples)} positive examples, {len(neg_examples)} negative examples.')
 
         for example in examples:

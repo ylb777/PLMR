@@ -53,23 +53,15 @@ class HotelDataset(Dataset):
             text = line[2].strip()
             examples.append({'text': text, 'label': label})
 
-        print('Dataset: Hotel Review')
-        print(f'{mode} samples: {len(examples)}')
-
         positive_examples = [example for example in examples if example['label'] == 1]
         negative_examples = [example for example in examples if example['label'] == 0]
 
-        print(f"{mode} data: {len(positive_examples)} positive examples, {len(negative_examples)} negative examples.")
-
         # Balance the dataset if specified
         if balance:
-            print('Balancing the training dataset...')
             min_count = min(len(positive_examples), len(negative_examples))
             positive_examples = random.sample(positive_examples, min_count)
             negative_examples = random.sample(negative_examples, min_count)
             examples = positive_examples + negative_examples
-            print(
-                f'After balancing: {len(positive_examples)} positive examples, {len(negative_examples)} negative examples.')
 
         for example in examples:
             self.labels.append(example['label'])
@@ -120,8 +112,6 @@ class HotelAnnotationData(Dataset):
         labels_list = []
         rationale_masks_list = []
 
-        print('Dataset: Hotel Review')
-
         for i, line in enumerate(lines):
             if i == 0:
                 continue  # Skip header
@@ -163,5 +153,3 @@ class HotelAnnotationData(Dataset):
         total_samples = len(labels_list)
         positive_samples = torch.sum(self.labels).item()
         negative_samples = total_samples - positive_samples
-        print(f'Annotation samples: {total_samples}')
-        print(f'Annotation data: {positive_samples} positive examples, {negative_samples} negative examples.')
