@@ -1,6 +1,6 @@
 # PLMR
 ## pytorch implementation of the KDD2025 paper: Boosting Explainability through Selective Rationalization in Pre-trained Language Models.
-## 1. Environments
+## Environments
 
 - **Ubuntu 18.04.6**  
 - **Python 3.9**
@@ -11,3 +11,31 @@
 - **tqdm==4.66.4**
 - **pandas==2.2.2**  
 - **numpy==1.26.4**
+
+## Datasets
+
+### Beer Reviews
+The dataset is available [here](https://people.csail.mit.edu/taolei/beer/).  
+After downloading, move it to the `./data/beer` directory.
+
+### Hotel Reviews
+You can download it from [here](https://people.csail.mit.edu/yujia/files/r2a/data.zip).  
+Then, copy the following files from `data/oracle` and place them in the `./data/hotel` directory:  
+- `hotel_Location.train`
+- `hotel_Location.dev`
+- `hotel_Service.train`
+- `hotel_Service.dev`
+- `hotel_Cleanliness.train`
+- `hotel_Cleanliness.dev`
+
+Additionally, transfer these files from `data/target` into the `./data/hotel/annotations` directory:  
+- `hotel_Location.train`
+- `hotel_Service.train`
+- `hotel_Cleanliness.train`
+
+### Word Embedding
+Download the **GloVe** word embedding file: `glove.6B.100d.txt`.  
+Move it to the `./data/hotel/embeddings` directory.
+
+
+
